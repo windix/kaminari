@@ -23,6 +23,7 @@ module Kaminari
         @template, @options = template, options
         @theme = @options[:theme] ? "#{@options[:theme]}/" : ''
         @options[:current_page] = PageProxy.new @window_options.merge(@options), @options[:current_page], nil
+        @options[:show_first_page_link] ||= Kaminari.config.show_first_page_link
         # initialize the output_buffer for Context
         @output_buffer = ActionView::OutputBuffer.new
       end

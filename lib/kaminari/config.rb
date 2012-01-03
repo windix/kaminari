@@ -24,6 +24,7 @@ module Kaminari
     config_accessor :right
     config_accessor :page_method_name
     config_accessor :param_name
+    config_accessor :show_first_page_link
 
     def param_name
       config.param_name.respond_to?(:call) ? config.param_name.call : config.param_name
@@ -39,5 +40,6 @@ module Kaminari
     config.right = 0
     config.page_method_name = :page
     config.param_name = :page
+    config.show_first_page_link = false
   end
 end
